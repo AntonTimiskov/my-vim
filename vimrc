@@ -23,7 +23,22 @@ set tabstop=4
 set statusline =
 
 source ~/.vim/bundle/ropevim/ropevim.vim
-let ropevim_vim_completion=1
+" Add rope complenition
+au BufRead,BufNewFile *.py,*pyw let ropevim_vim_completion=1
+let rope_vim_completion=1
+
+function! TabWrapperRope()
+  if strpart(getline('.'), 0, col('.')-1) =~ '^\s*$'
+    return "\<Tab>"
+  else
+    return "\<C-R>=RopeCodeAssistInsertMode()\<CR>"
+  endif
+endfunction
+
+au BufRead,BufNewFile *.py,*pyw imap <Tab> <C-R>=TabWrapperRope()<CR>
+au BufRead,BufNewFile *.py,*pyw imap <silent><C-Space> <ESC>l:RopeCodeAssist<CR>
+au BufRead,BufNewFile *.py,*pyw nmap <silent><C-Space> :RopeCodeAssist<CR>
+au BufRead,BufNewFile *.py,*pyw nnoremap <silent>, :call RopeShowDoc()<CR>
 
 source ~/.vim/bundle/bufexplorer/bufexplorer.vim
 
