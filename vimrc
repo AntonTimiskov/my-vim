@@ -19,6 +19,11 @@ autocmd! bufwritepost vimrc source ~/.vimrc
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
+set smartindent
+set foldmethod=indent
+set foldlevel=99
+
+let python_highlight_all = 1
 
 set statusline =
 
@@ -45,9 +50,6 @@ source ~/.vim/bundle/bufexplorer/bufexplorer.vim
 source ~/.vim/bundle/makegreen/makegreen.vim
 autocmd BufNewFile,BufRead *.py compiler nose
 let $DJANGO_SETTINGS_MODULE = "settings"
-
-" common settings
-set smartindent
 
 " F2 - quick save
 nmap <F2> :w<cr>
@@ -76,4 +78,11 @@ imap <C-o> <esc><esc>:NERDTree<cr>
 let NERDTreeIgnore = ['\.pyc$', '\.log$', '\.bat$', '\.sh$']
 
 "ropevim
-map <C-c>g :call RopeGotoDefinition()
+map <leader>g :RopeGotoDefinition<CR>
+map <leader>r :RopeRename<CR>
+map <leader>f :RopeFindOccurrences<CR>
+
+" TagList
+nnoremap <silent> <C-F8> :TlistOpen<CR>
+nnoremap <silent> <F8> :TlistToggle<CR>
+map <C-F7> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
