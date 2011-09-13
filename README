@@ -1,0 +1,5 @@
+Required components:
+python
+python-rope
+exuberant-ctags
+ack
