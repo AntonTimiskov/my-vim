@@ -27,7 +27,7 @@ let python_highlight_all = 1
 
 set statusline =
 
-source ~/.vim/bundle/ropevim/ropevim.vim
+source ~/.vim/plugin/ropevim.vim
 " Add rope complenition
 au BufRead,BufNewFile *.py,*pyw let ropevim_vim_completion=1
 let rope_vim_completion=1
@@ -83,6 +83,7 @@ map <leader>r :RopeRename<CR>
 map <leader>f :RopeFindOccurrences<CR>
 
 " TagList
-nnoremap <silent> <C-F8> :TlistOpen<CR>
-nnoremap <silent> <F8> :TlistToggle<CR>
-map <C-F7> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+nnoremap <C-F8> :TlistOpen<CR>
+nnoremap <F8> :TlistToggle<CR>
+
+map <C-F7> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
