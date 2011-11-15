@@ -27,24 +27,6 @@ let python_highlight_all = 1
 
 set statusline =
 
-source ~/.vim/plugin/ropevim.vim
-" Add rope complenition
-au BufRead,BufNewFile *.py,*pyw let ropevim_vim_completion=1
-let rope_vim_completion=1
-
-function! TabWrapperRope()
-  if strpart(getline('.'), 0, col('.')-1) =~ '^\s*$'
-    return "\<Tab>"
-  else
-    return "\<C-R>=RopeCodeAssistInsertMode()\<CR>"
-  endif
-endfunction
-
-au BufRead,BufNewFile *.py,*pyw imap <Tab> <C-R>=TabWrapperRope()<CR>
-au BufRead,BufNewFile *.py,*pyw imap <silent><C-Space> <ESC>l:RopeCodeAssist<CR>
-au BufRead,BufNewFile *.py,*pyw nmap <silent><C-Space> :RopeCodeAssist<CR>
-au BufRead,BufNewFile *.py,*pyw nnoremap <silent>, :call RopeShowDoc()<CR>
-
 source ~/.vim/bundle/bufexplorer/bufexplorer.vim
 
 source ~/.vim/bundle/makegreen/makegreen.vim
@@ -76,11 +58,6 @@ map <C-o> <esc>:NERDTree<cr>
 vmap <C-o> <esc>:NERDTree<cr>
 imap <C-o> <esc><esc>:NERDTree<cr>
 let NERDTreeIgnore = ['\.pyc$', '\.log$', '\.bat$', '\.sh$']
-
-"ropevim
-map <leader>g :RopeGotoDefinition<CR>
-map <leader>r :RopeRename<CR>
-map <leader>f :RopeFindOccurrences<CR>
 
 " TagList
 nnoremap <C-F8> :TlistOpen<CR>
