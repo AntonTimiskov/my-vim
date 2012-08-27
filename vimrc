@@ -17,11 +17,27 @@ nmap <leader>w :w!<cr>
 autocmd! bufwritepost vimrc source ~/.vimrc
 
 set shiftwidth=4
+"set expandtab
 set softtabstop=4
 set tabstop=4
-set smartindent
+"set smartindent
 set foldmethod=indent
 set foldlevel=99
+
+
+let g:list_opt = 0
+function! ToggleList()
+  "Toggle 'list' view
+  if g:list_opt == 0
+    let g:list_opt = 1
+    set list
+  else
+    let g:list_opt = 0
+    set nolist
+  endif
+endf
+
+nmap <leader><TAB> :call ToggleList()<cr>
 
 let python_highlight_all = 1
 
@@ -58,9 +74,21 @@ map <C-o> <esc>:NERDTree<cr>
 vmap <C-o> <esc>:NERDTree<cr>
 imap <C-o> <esc><esc>:NERDTree<cr>
 let NERDTreeIgnore = ['\.pyc$', '\.log$', '\.bat$', '\.sh$']
+map <leader>o <esc>:NERDTreeToggle<CR>
 
 " TagList
 nnoremap <C-F8> :TlistOpen<CR>
 nnoremap <F8> :TlistToggle<CR>
 
-map <C-F7> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+" map <C-F7> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+call system("source /home/wraith/projects/quest/django/bin/activate")
+
+" Ropevim
+map <leader>g :RopeGotoDefinition<CR>
+map <leader>m :RopeMove<CR>
+map <leader>r :RopeRename<CR>
+map <leader>f :RopeFindOccurrences<CR>
+
+set hlsearch
+set nu

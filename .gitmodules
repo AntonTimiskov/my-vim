@@ -4,3 +4,6 @@
 [submodule "bundle/ropevim"]
 	path = bundle/ropevim
 	url = https://github.com/sontek/rope-vim.git
+[submodule "bundle/python-mode"]
+	path = bundle/python-mode
+	url = git@github.com:AntonTimiskov/python-mode.git
