@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/amalkov'
-let g:netrw_dirhist_2='/home/wraith/.subversion'
-let g:netrw_dirhist_3='/home/wraith/projects/quest/sasp/SharePoint Information Portal/Application'
-let g:netrw_dirhist_4='/home/wraith/projects/quest/sasp/Setup'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/wraith/projects/quest/sasp-hunter/CoffeeScript/ReportNavigation/test/specs'
+let g:netrw_dirhist_2='/home/wraith/projects/quest/sasp-hunter/CoffeeScript/AppHeader/test/specs'
+let g:netrw_dirhist_3='/home/wraith/projects/quest/sasp-hunter/CoffeeScript/Dialogs'
+let g:netrw_dirhist_4='/home/wraith/projects/quest/sasp-hunter/SharePoint Information Portal/Application/templates/static/html'
+let g:netrw_dirhist_5='/home/wraith/projects/quest/sasp-hunter/CoffeeScript/RolesManager'

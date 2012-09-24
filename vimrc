@@ -17,7 +17,7 @@ nmap <leader>w :w!<cr>
 autocmd! bufwritepost vimrc source ~/.vimrc
 
 set shiftwidth=4
-"set expandtab
+set expandtab
 set softtabstop=4
 set tabstop=4
 "set smartindent
